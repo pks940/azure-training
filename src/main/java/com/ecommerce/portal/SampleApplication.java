@@ -7,11 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @SpringBootApplication
 public class SampleApplication {
 
-    @GetMapping("/message")
-    public String message(){
-        return "App is deployed in azure";
-    }
-
 	public static void main(String[] args) {
 		SpringApplication.run(SampleApplication.class, args);
 	}
