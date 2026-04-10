@@ -14,19 +14,28 @@ public class ItemService {
     @Autowired
     private ItemRepository repository;
 
+    @Autowired
+    private BlobService blobService;
+
     public List<Item> getAllItems(){
         return  repository.findAll();
     }
 
-    public void createItem(ItemDTO itemDTO){
+    public void createItem(ItemDTO itemDTO) throws Exception {
         repository.save(mapToItemEntity(itemDTO));
     }
 
-    private Item mapToItemEntity(ItemDTO itemDTO){
-        return Item.builder()
-                .name(itemDTO.getName())
-                .quantity(itemDTO.getQuantity())
-                .price(itemDTO.getPrice())
-                .build();
+    private Item mapToItemEntity(ItemDTO dto) throws Exception {
+        Item item = new Item();
+        item.setName(dto.getName());
+        item.setPrice(dto.getPrice());
+        item.setQuantity(dto.getQuantity());
+
+        if (dto.getFile() != null) {
+            String imageUrl = blobService.uploadFile(dto.getFile());
+            item.setImageUrl(imageUrl);
+        }
+
+        return item;
     }
 }

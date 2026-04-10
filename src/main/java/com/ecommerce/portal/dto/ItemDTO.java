@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,5 +14,5 @@ public class ItemDTO {
     private String name;
     private double price;
     private int quantity;
-
+    private MultipartFile file;
 }

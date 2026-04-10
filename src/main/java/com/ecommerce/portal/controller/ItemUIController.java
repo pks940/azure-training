@@ -29,7 +29,7 @@ public class ItemUIController {
     }
 
     @PostMapping("/item")
-    public String createItem(@ModelAttribute ItemDTO item) {
+    public String createItem(@ModelAttribute ItemDTO item) throws Exception {
         service.createItem(item);
         return "redirect:/item";
     }
