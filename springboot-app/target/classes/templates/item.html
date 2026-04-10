@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h2>Item List</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+
+    <tr th:each="p : ${items}">
+        <td th:text="${p.name}"></td>
+        <td th:text="${p.price}"></td>
+        <td th:text="${p.quantity}"></td>
+        <td>
+            <img th:src="${p.imageUrl}" width="100"/>
+        </td>
+    </tr>
+
+</table>
+
+<a href="/">Back</a>
+
+</body>
+</html>
