@@ -20,6 +20,7 @@ public class OrderFunction {
             HttpRequestMessage<String> request,
             ExecutionContext context) {
 
+
         context.getLogger().info("Order function triggered");
 
         String orderJson = request.getBody();
