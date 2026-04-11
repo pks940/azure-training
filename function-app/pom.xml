@@ -22,8 +22,6 @@
         <version>3.0.0</version>
     </dependency>
 </dependencies>
-
-    ```xml
     <build>
         <plugins>
             <plugin>
@@ -42,6 +40,5 @@
             </plugin>
         </plugins>
     </build>
-    ```
 
 </project>
