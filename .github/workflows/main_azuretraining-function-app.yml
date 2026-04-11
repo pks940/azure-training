@@ -33,11 +33,11 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: 'microsoft'
 
-      - name: 'Restore Project Dependencies Using Mvn'
+      - name: Build Function App
         shell: pwsh
         run: |
           pushd './${{ env.PACKAGE_DIRECTORY }}'
-          mvn clean package
+          mvn clean package azure-functions:package
           popd
       
       - name: Login to Azure
