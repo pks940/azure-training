@@ -23,13 +23,25 @@
     </dependency>
 </dependencies>
 
+    ```xml
     <build>
         <plugins>
             <plugin>
                 <groupId>com.microsoft.azure</groupId>
                 <artifactId>azure-functions-maven-plugin</artifactId>
                 <version>1.15.0</version>
+                <configuration>
+                    <appName>azuretraining-function-app</appName>
+                    <resourceGroup>azurePractice</resourceGroup>
+                    <region>centralindia</region>
+                    <runtime>
+                        <os>windows</os>
+                        <javaVersion>17</javaVersion>
+                    </runtime>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+    ```
+
 </project>
