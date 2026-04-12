@@ -42,8 +42,7 @@ public class OrderFunction {
 
         // Call Logic App
         try {
-            //String logicAppUrl = System.getenv("LOGIC_APP_URL");
-            String logicAppUrl ="LOGIC_APP_URL";
+            String logicAppUrl = System.getenv("LOGIC_APP_URL");
 
             URL url = new URL(logicAppUrl);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
