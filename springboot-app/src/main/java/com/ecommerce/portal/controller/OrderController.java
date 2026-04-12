@@ -17,7 +17,7 @@ public class OrderController {
 
     @PostMapping
     public Order placeOrder(@RequestParam Long itemId,
-                            @RequestParam int qty) {
+                            @RequestParam int qty) throws Exception {
         return service.placeOrder(itemId, qty);
     }
 }

@@ -19,7 +19,7 @@ public class OrderService {
     @Autowired
     private FunctionClient functionClient;
 
-    public Order placeOrder(Long itemId, int qty) {
+    public Order placeOrder(Long itemId, int qty) throws Exception {
 
         Item item = itemRepo.findById(itemId)
                 .orElseThrow(() -> new RuntimeException("Item not found"));
