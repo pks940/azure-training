@@ -10,8 +10,7 @@ public class FunctionClient {
     private final RestTemplate restTemplate = new RestTemplate();
 
     private final String FUNCTION_URL =
-            "https://<function-app>.azurewebsites.net/api/processOrder";
-
+            "https://azuretraining-function-app.azurewebsites.net/api/processOrder";
     public void sendOrder(Order order) {
         restTemplate.postForObject(FUNCTION_URL, order, String.class);
     }
