@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class BlobService {
-    @Value("${azure.storage.connection-string}")
+   /* @Value("${azure.storage.connection-string}")
     private String connectionString;
 
     @Value("${azure.storage.container-name}")
@@ -28,5 +28,5 @@ public class BlobService {
         blobClient.upload(file.getInputStream(), file.getSize(), true);
 
         return blobClient.getBlobUrl();
-    }
+    }*/
 }
