@@ -24,7 +24,7 @@ public class ItemUIController {
 
     @GetMapping("/item")
     public String getItemPage(Model model) {
-        model.addAttribute("items", service.getAllItems()); // <-- add this
+        model.addAttribute("items", service.getAllItems());
         return "item";
     }
 
