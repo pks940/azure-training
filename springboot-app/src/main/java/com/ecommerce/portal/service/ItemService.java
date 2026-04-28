@@ -31,10 +31,10 @@ public class ItemService {
         item.setPrice(dto.getPrice());
         item.setQuantity(dto.getQuantity());
 
-//        if (dto.getFile() != null) {
-//            String imageUrl = blobService.uploadFile(dto.getFile());
-//            item.setImageUrl(imageUrl);
-//        }
+        if (dto.getFile() != null) {
+            String imageUrl = blobService.uploadFile(dto.getFile());
+            item.setImageUrl(imageUrl);
+        }
 
         return item;
     }
