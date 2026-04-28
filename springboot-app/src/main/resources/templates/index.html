@@ -4,13 +4,13 @@
 
 <h2>Create Product</h2>
 
-<form th:action="@{/item}" method="post" enctype="multipart/form-data">
+<form th:action="@{/item}" method="post">
 
     Name: <input type="text" name="name"/><br/>
     Price: <input type="number" name="price"/><br/>
     Quantity: <input type="number" name="quantity"/><br/>
 
-    Image: <input type="file" name="file"/><br/>
+    <!--Image: <input type="file" name="file"/><br/>-->
 
     <button type="submit">Create</button>
 </form>
