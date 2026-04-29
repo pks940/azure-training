@@ -33,9 +33,4 @@ public class ItemUIController {
         service.createItem(item);
         return "redirect:/item";
     }
-
-    @GetMapping("/health")
-    public String health() {
-        return "OK";
-    }
 }
