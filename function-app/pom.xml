@@ -29,8 +29,8 @@
                 <artifactId>azure-functions-maven-plugin</artifactId>
                 <version>1.15.0</version>
                 <configuration>
-                    <appName>azuretraining-function-app</appName>
-                    <resourceGroup>azurePractice</resourceGroup>
+                    <appName>azure-training-function</appName>
+                    <resourceGroup>azure-training-resource</resourceGroup>
                     <region>centralindia</region>
                     <runtime>
                         <os>windows</os>
