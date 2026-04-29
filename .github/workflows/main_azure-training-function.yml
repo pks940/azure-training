@@ -7,11 +7,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'function-app/**'
   workflow_dispatch:
 
 env:
   AZURE_FUNCTIONAPP_NAME: azure-training-function # set this to your function app name on Azure
-  PACKAGE_DIRECTORY: '.' # set this to the directory which contains pom.xml file
+  PACKAGE_DIRECTORY: './function-app' # set this to the directory which contains pom.xml file
   JAVA_VERSION: '17' # set this to the java version to use
 
 jobs:
@@ -31,11 +33,11 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: 'microsoft'
 
-      - name: 'Restore Project Dependencies Using Mvn'
+      - name: Build Function App
         shell: pwsh
         run: |
           pushd './${{ env.PACKAGE_DIRECTORY }}'
-          mvn clean package
+          mvn clean package azure-functions:package
           popd
       
       - name: Login to Azure
@@ -51,6 +53,6 @@ jobs:
         with:
           app-name: 'azure-training-function'
           slot-name: 'Production'
-          package: '${{ env.PACKAGE_DIRECTORY }}'
+          package: '${{ env.PACKAGE_DIRECTORY }}/target/azure-functions/${{ env.AZURE_FUNCTIONAPP_NAME }}'
           respect-pom-xml: true
           
